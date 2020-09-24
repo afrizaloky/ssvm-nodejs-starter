@@ -8,6 +8,10 @@
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
 * Use the `node node/app.js` command to run the application in Node.js.
 
+## Introduction
+This repository is build with ssvm. 
+The code from rust are converted by ssvm to WebAssembly. 
+Function from WebAssembly used by node app. This repository is about check a prime number
 
 ## Use Docker to build and run
 
@@ -22,8 +26,8 @@ $ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starte
 From a second terminal window, you can test the local server.
 
 ```
-$ curl http://localhost:3000/?name=SSVM
-hello SSVM
+$ curl http://localhost:3000/?number=5
+true
 ```
 
 
@@ -74,8 +78,8 @@ Or, you could open another terminal window in the IDE via the `Terminal -> New T
 From the terminal window, you can test the local server.
 
 ```
-$ curl http://127.0.0.1:3000/?name=SSVM
-hello SSVM
+$ curl http://127.0.0.1:3000/?number=5
+true
 ```
 
 ### More exercises
