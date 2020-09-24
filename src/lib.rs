@@ -11,6 +11,7 @@ pub fn say(s: &str) -> String {
 
 #[wasm_bindgen]
 pub fn is_prime(n: u32) -> String {
+  println!("The Rust function is_prime() received {}", n);
   if n <= 1 {
       return "false".to_string();
   }
