@@ -1,4 +1,5 @@
 use wasm_bindgen::prelude::*;
+
 // use ndarray::arr2;
 
 #[wasm_bindgen]
@@ -10,12 +11,12 @@ pub fn say(s: &str) -> String {
 
 
 #[wasm_bindgen]
-pub fn is_prime(n: u32) -> String {
-  println!("The Rust function is_prime() received {}", n);
+pub fn is_prime(n: i32) -> String {
+  let itter = (n as f64).sqrt() as i32;
   if n <= 1 {
       return "false".to_string();
   }
-  for a in 2..n {
+  for a in 2..itter+1 {
       if n % a == 0 {
           return "false".to_string(); // if it is not the last statement you need to use `return`
       }
